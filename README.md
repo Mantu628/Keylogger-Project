@@ -20,44 +20,44 @@ Can run only during work hours (9 AM to 5 PM)
 
 🛠️ How to Use
 1. Install Dependencies
-[bash]
-pip install pynput
-sudo apt install xdotool  # required for getting active window
+      [bash]
+     pip install pynput
+     sudo apt install xdotool  # required for getting active window
 
 2. Run the Script
-[bash]
-python3 keylogger.py
+     [bash]
+     python3 keylogger.py
 
 Or, to run it in the background:
-[bash]
-nohup python3 keylogger.py &
+     [bash]
+     nohup python3 keylogger.py &
 
 ⚙️ Auto Start on Boot (Optional)
 If you want the keylogger to run automatically on system startup using systemd:
 
 Create a service file:
 
-[bash]
-sudo nano /etc/systemd/system/keylogger.service
+     [bash]
+     sudo nano /etc/systemd/system/keylogger.service
 
-Add this content (replace /path/to/keylogger.py with the actual file path):
+     Add this content (replace /path/to/keylogger.py with the actual file path):
 
-ini
-[Unit]
-Description=Keylogger Service
-After=network.target
+     ini
+     [Unit]
+     Description=Keylogger Service
+     After=network.target
 
-[Service]
-ExecStart=/usr/bin/python3 /path/to/keylogger.py
-Restart=always
+     [Service]
+     ExecStart=/usr/bin/python3 /path/to/keylogger.py
+     Restart=always
 
 [Install]
 WantedBy=multi-user.target
 Enable and start the service:
 
-[bash]
-sudo systemctl enable keylogger.service
-sudo systemctl start keylogger.service
+     [bash]
+     sudo systemctl enable keylogger.service
+     sudo systemctl start keylogger.service
 
 
 🧠 Educational Purpose
@@ -74,9 +74,9 @@ Ethical hacking practices
 📁 Log Location
 Logs are stored in your home directory:
 
-[bash]
-~/log.txt
-~/log_backup.txt
+     [bash]
+     ~/log.txt
+     ~/log_backup.txt
 Old logs are auto-deleted every 48 hours.
 
 ❗ Disclaimer
